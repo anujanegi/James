@@ -13,8 +13,13 @@ head = '''
 ||	||   ||        ||   ||      ||  ||                ||
   ||||||    ||          ||  ||      ||  |||||||||  |||||||||   
 
---------------- A YouTube video downloader ------------------ 
+--------------- A YouTube video downloader ------------------
+-----------------------------------------------------------AN 
+'''
 
+menulist = '''
+1. Download
+2. Exit
 '''
 print head
 
@@ -26,7 +31,7 @@ def quit():
     else:
         os.system("clear")
         print head
-        download()
+        menu()
 
 def download():
 	try:
@@ -38,4 +43,18 @@ def download():
 	except(KeyboardInterrupt):
 		print ""
 
-download()
+def menu():
+	print menulist
+	try:
+		choice = input("james:~$")
+		if choice == 1:
+			download()
+		elif choice == 2:
+			quit()
+		else:
+			print "Wrong option number!"
+			menu()
+	except(KeyboardInterrupt):
+		print ""
+
+menu()
